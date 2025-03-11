@@ -32,5 +32,12 @@ The tractors are operated by two autonomous agents: An agent that monitors the c
 - **IrrigateAffordance**: An affordance offerred by the environment to agents for irrigating the soil.
 - **Coordinates**: A set of 4 coordinates [X1,Y1,X2,Y2] that define the opposite corners of a square section at points [X1,Y1] and [X2,Y2].
 - **SoilMoisture**: The level of moisture in soil.
-- ...
-- *Complete the glossary for definiting terms required to model the motivating scenario of the domain. These terms will then be formally defined in your TBox.*
+
+### Task 2.1 - extended glossary
+- Section: A section of the farm used for growing crops.
+- Crop: A type of plant cultivated on a land section. Can be of different types, such as corn or wheat.
+- Corn: A crop of type corn.
+- Wheat: A crop of type wheat.
+
+#### New property:
+- hasRequiredMoistureLevel: A property that links a Crop to its required soil moisture level.
