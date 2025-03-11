@@ -1,0 +1,10 @@
+PREFIX ex: <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-SD#>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?crop ?cropType ?cropTypeLabel
+WHERE {
+   ex:section-beeb35eb-eff5-410c-8d84-a812c75a60e8 was:hasCrop ?crop.  # Get the crop associated with the section
+   ?crop a ?cropType.  # Get the type of the crop (e.g., was:Wheat, was:Corn)
+   ?cropType rdfs:label ?cropTypeLabel.  # Get the label of the crop's type (Wheat, Corn)
+}

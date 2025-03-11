@@ -31,11 +31,12 @@ was:hasAffordance rdf:type owl:ObjectProperty ;
                   rdfs:range was:Affordance .
 
 
-###  https://was-course.interactions.ics.unisg.ch/farm-ontology#hasCoordinates
-was:hasCoordinates rdf:type owl:ObjectProperty ;
-                   owl:inverseOf was:isCoordinatesOf ;
-                   rdfs:domain was:Section ;
-                   rdfs:range was:Coordinates .
+###  https://was-course.interactions.ics.unisg.ch/farm-ontology#hasCoordinate
+was:hasCoordinate rdf:type owl:ObjectProperty ;
+                  owl:inverseOf was:isCoordinateOf ;
+                  rdfs:domain was:Section ;
+                  rdfs:range was:Coordinate ;
+                  rdfs:comment "" .
 
 
 ###  https://was-course.interactions.ics.unisg.ch/farm-ontology#hasCrop
@@ -69,8 +70,8 @@ was:hasTractor rdf:type owl:ObjectProperty ;
 was:isAffordanceOf rdf:type owl:ObjectProperty .
 
 
-###  https://was-course.interactions.ics.unisg.ch/farm-ontology#isCoordinatesOf
-was:isCoordinatesOf rdf:type owl:ObjectProperty .
+###  https://was-course.interactions.ics.unisg.ch/farm-ontology#isCoordinateOf
+was:isCoordinateOf rdf:type owl:ObjectProperty .
 
 
 ###  https://was-course.interactions.ics.unisg.ch/farm-ontology#isCropOf
@@ -89,28 +90,28 @@ was:isTractorOf rdf:type owl:ObjectProperty .
 ###  https://was-course.interactions.ics.unisg.ch/farm-ontology#coordinateX1
 was:coordinateX1 rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty ;
-                 rdfs:domain was:Coordinates ;
+                 rdfs:domain was:Coordinate ;
                  rdfs:range xsd:integer .
 
 
 ###  https://was-course.interactions.ics.unisg.ch/farm-ontology#coordinateX2
 was:coordinateX2 rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty ;
-                 rdfs:domain was:Coordinates ;
+                 rdfs:domain was:Coordinate ;
                  rdfs:range xsd:integer .
 
 
 ###  https://was-course.interactions.ics.unisg.ch/farm-ontology#coordinateY1
 was:coordinateY1 rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty ;
-                 rdfs:domain was:Coordinates ;
+                 rdfs:domain was:Coordinate ;
                  rdfs:range xsd:integer .
 
 
 ###  https://was-course.interactions.ics.unisg.ch/farm-ontology#coordinateY2
 was:coordinateY2 rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf owl:topDataProperty ;
-                 rdfs:domain was:Coordinates ;
+                 rdfs:domain was:Coordinate ;
                  rdfs:range xsd:integer .
 
 
@@ -134,36 +135,37 @@ was:requiredSoilMoisture rdf:type owl:DatatypeProperty ;
 was:Affordance rdf:type owl:Class .
 
 
-###  https://was-course.interactions.ics.unisg.ch/farm-ontology#Coordinates
-was:Coordinates rdf:type owl:Class ;
-                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty was:coordinateX1 ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:integer
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty was:coordinateX2 ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:integer
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty was:coordinateY1 ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:integer
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty was:coordinateY2 ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:integer
-                                ] ;
-                rdfs:comment "A set of 4 coordinates [X1,Y1,X2,Y2] that define the opposite corners of a square section at points [X1,Y1] and [X2,Y2]."@en .
+###  https://was-course.interactions.ics.unisg.ch/farm-ontology#Coordinate
+was:Coordinate rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty was:coordinateX1 ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty was:coordinateX2 ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty was:coordinateY1 ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty was:coordinateY2 ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ;
+               rdfs:comment "A set of 4 coordinates [X1,Y1,X2,Y2] that define the opposite corners of a square section at points [X1,Y1] and [X2,Y2]."@en .
 
 
 ###  https://was-course.interactions.ics.unisg.ch/farm-ontology#Corn
 was:Corn rdf:type owl:Class ;
          rdfs:subClassOf was:Crop ;
          owl:disjointWith was:Wheat ;
-         rdfs:comment "A crop of type corn." .
+         rdfs:comment "A crop of type corn." ;
+         rdfs:label "Corn" .
 
 
 ###  https://was-course.interactions.ics.unisg.ch/farm-ontology#Crop
@@ -207,9 +209,9 @@ was:ReadSoilMoistureAffordance rdf:type owl:Class ;
 ###  https://was-course.interactions.ics.unisg.ch/farm-ontology#Section
 was:Section rdf:type owl:Class ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                              owl:onProperty was:hasCoordinates ;
+                              owl:onProperty was:hasCoordinate ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                              owl:onClass was:Coordinates
+                              owl:onClass was:Coordinate
                             ] ,
                             [ rdf:type owl:Restriction ;
                               owl:onProperty was:hasCrop ;
@@ -247,7 +249,8 @@ was:Tractor rdf:type owl:Class ;
 ###  https://was-course.interactions.ics.unisg.ch/farm-ontology#Wheat
 was:Wheat rdf:type owl:Class ;
           rdfs:subClassOf was:Crop ;
-          rdfs:comment "A crop of type wheat." .
+          rdfs:comment "A crop of type wheat." ;
+          rdfs:label "Wheat" .
 
 
 #################################################################
@@ -256,7 +259,7 @@ was:Wheat rdf:type owl:Class ;
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( was:Affordance
-                was:Coordinates
+                was:Coordinate
                 was:Crop
                 was:Farm
                 was:Section

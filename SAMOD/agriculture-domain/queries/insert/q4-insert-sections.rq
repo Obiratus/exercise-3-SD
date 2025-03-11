@@ -1,0 +1,35 @@
+PREFIX ex: <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-SD#>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+INSERT {
+    GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-SD#> {
+        ?farm was:hasSection ex:section-2b8a9240-a12d-43d3-ab02-e9ea7f7b9335.
+        ?farm was:hasSection ex:section-4d943c6d-c10a-4488-95a3-44b0028ad5ae.
+        ?farm was:hasSection ex:section-beeb35eb-eff5-410c-8d84-a812c75a60e8.
+        ?farm was:hasSection ex:section-d236b999-6121-49af-84cd-ab0d0b305bee.
+
+        ex:section-2b8a9240-a12d-43d3-ab02-e9ea7f7b9335 a was:Section;
+        was:hasCoordinate ex:coord-026408b5-d761-43ed-a23e-04145ae157b5;
+        was:hasCrop ex:crop-351493d8-7e57-4dbf-9f28-b14741ae044d;
+        was:hasSoilMoisture ex:soilMoisture-56fc1164-8fa1-4e7d-a00e-e62633c283bc.
+
+        ex:section-4d943c6d-c10a-4488-95a3-44b0028ad5ae a was:Section;
+        was:hasCoordinate ex:coord-1f9fc6c4-650e-49ee-9622-4333dd711fd8;
+        was:hasCrop ex:crop-edb464dd-f252-477b-92c5-2b27914fbcab;
+        was:hasSoilMoisture ex:soilMoisture-9e93db89-2da2-4cf7-9b28-aba70c40d9c1.
+
+        ex:section-beeb35eb-eff5-410c-8d84-a812c75a60e8 a was:Section;
+        was:hasCoordinate ex:coord-2218bd3e-7b6a-4e97-b646-3b22ab3dbb1c;
+        was:hasCrop ex:crop-1185f9f8-b5e4-493d-821d-0d6540bee000;
+        was:hasSoilMoisture ex:soilMoisture-a38734d6-1495-4a17-b805-290dc1203fd4.
+
+        ex:section-d236b999-6121-49af-84cd-ab0d0b305bee a was:Section;
+        was:hasCoordinate ex:coord-d3751b91-268b-4f63-9a23-c1141c611d56;
+        was:hasCrop ex:crop-6ab5558a-f79b-4ca5-a3d0-9937ad824fbc;
+        was:hasSoilMoisture ex:soilMoisture-afaf9541-060e-461f-9a03-f23caf42bb80.
+    }
+}
+WHERE {
+    ?farm a was:Farm.
+}

@@ -1,0 +1,9 @@
+PREFIX ex: <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-SD#>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+
+SELECT DISTINCT ?section ?crop ?cropType
+WHERE {
+   ?section was:hasCrop ?crop.  # Find the crop associated with each section
+   ?crop a ?cropType.  # Get the type (class) of the crop (e.g., was:Wheat, was:Corn)
+   FILTER(?cropType IN (was:Wheat, was:Corn))  # Only keep the specific crop classes (Wheat, Corn)
+}

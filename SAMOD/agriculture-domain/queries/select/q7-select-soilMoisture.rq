@@ -1,0 +1,13 @@
+PREFIX ex: <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-SD#>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?crop ?cropType ?requiredMoistureLevel
+WHERE {
+   ex:crop-1185f9f8-b5e4-493d-821d-0d6540bee000 a ?cropType.  # Get the type (class) of the crop
+   ?cropType rdfs:label ?cropTypeLabel.  # Get the label of the crop type
+   ex:crop-1185f9f8-b5e4-493d-821d-0d6540bee000 was:requiredSoilMoisture ?requiredMoistureLevel.  # Get the required moisture level for the crop
+   FILTER(?cropType != was:Crop)  # Exclude the general Crop class
+   BIND(ex:crop-1185f9f8-b5e4-493d-821d-0d6540bee000 AS ?crop)  # Add the crop instance in the result
+}

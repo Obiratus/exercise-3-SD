@@ -1,0 +1,13 @@
+PREFIX ex: <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-SD#>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?section ?x1 ?x2 ?y1 ?y2
+WHERE {
+   ex:section-d236b999-6121-49af-84cd-ab0d0b305bee was:hasCoordinate ?coordinate.
+   ?coordinate was:coordinateX1 ?x1;
+   was:coordinateX2 ?x2;
+   was:coordinateY1 ?y1;
+   was:coordinateY2 ?y2.
+   BIND(ex:section-d236b999-6121-49af-84cd-ab0d0b305bee AS ?section)  # Add the section in the result
+}

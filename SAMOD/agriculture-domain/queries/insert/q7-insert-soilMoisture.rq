@@ -1,0 +1,20 @@
+PREFIX ex: <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-SD#>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+INSERT {
+    GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-SD#> {
+        ex:soilMoisture-56fc1164-8fa1-4e7d-a00e-e62633c283bc a was:SoilMoisture;
+        was:moistureLevel "79"^^xsd:integer.
+
+        ex:soilMoisture-9e93db89-2da2-4cf7-9b28-aba70c40d9c1 a was:SoilMoisture;
+        was:moistureLevel "80"^^xsd:integer.
+
+        ex:soilMoisture-a38734d6-1495-4a17-b805-290dc1203fd4 a was:SoilMoisture;
+        was:moistureLevel "119"^^xsd:integer.
+
+        ex:soilMoisture-afaf9541-060e-461f-9a03-f23caf42bb80 a was:SoilMoisture;
+        was:moistureLevel "120"^^xsd:integer.
+    }
+}
+WHERE {}

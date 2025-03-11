@@ -1,0 +1,32 @@
+PREFIX ex: <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-SD#>
+PREFIX was: <https://was-course.interactions.ics.unisg.ch/farm-ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+INSERT {
+    GRAPH <https://sandbox-graphdb.interactions.ics.unisg.ch/was-exercise-3-SD#> {
+        ex:coord-026408b5-d761-43ed-a23e-04145ae157b5 a was:Coordinate ;
+        was:coordinateX1 "0"^^xsd:integer ;
+        was:coordinateY1 "0"^^xsd:integer ;
+        was:coordinateX2 "1"^^xsd:integer ;
+        was:coordinateY2 "1"^^xsd:integer .
+
+        ex:coord-1f9fc6c4-650e-49ee-9622-4333dd711fd8 a was:Coordinate ;
+        was:coordinateX1 "1"^^xsd:integer ;
+        was:coordinateY1 "0"^^xsd:integer ;
+        was:coordinateX2 "2"^^xsd:integer ;
+        was:coordinateY2 "1"^^xsd:integer .
+
+        ex:coord-2218bd3e-7b6a-4e97-b646-3b22ab3dbb1c a was:Coordinate ;
+        was:coordinateX1 "0"^^xsd:integer ;
+        was:coordinateY1 "1"^^xsd:integer ;
+        was:coordinateX2 "1"^^xsd:integer ;
+        was:coordinateY2 "2"^^xsd:integer .
+
+        ex:coord-d3751b91-268b-4f63-9a23-c1141c611d56 a was:Coordinate ;
+        was:coordinateX1 "1"^^xsd:integer ;
+        was:coordinateY1 "1"^^xsd:integer ;
+        was:coordinateX2 "2"^^xsd:integer ;
+        was:coordinateY2 "2"^^xsd:integer .
+    }
+}
+WHERE {}
